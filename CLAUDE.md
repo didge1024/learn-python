@@ -34,13 +34,30 @@ understanding and lets their mentor read back what they were thinking.
 ## Saving their work so their mentor can read it
 
 Their practice is committed back to GitHub so their mentor can read the code **and the
-comments**, then adjust and improve the lessons.
+comments**, then adjust and improve the lessons. This is wired up two ways:
 
-- Encourage them to **save often**. When they finish something, it's worth committing.
-- If auto-commit hooks aren't set up, you can offer to commit and push their work for
-  them with a clear message (e.g. `git add -A && git commit -m "..." && git push`).
-- Keep commit messages plain and readable — they're notes for a person, e.g.
+- **Automatic (hooks):** `.claude/settings.json` pulls the latest lessons on
+  `SessionStart` and commits + pushes their work on `SessionEnd`. So just by using
+  Claude here, their comments travel back to their mentor.
+- **On demand (`./save.sh`):** when they finish up, encourage them to run `./save.sh`.
+  It shows them what changed, asks them to **approve** sending it, and — importantly —
+  lets them type any **question or concern for their mentor**, which is saved into
+  `notes-for-mentor.md` and committed too. Nudge them to use this whenever something
+  confused them.
+- Keep any commit messages plain and readable — they're notes for a person, e.g.
   *"Finished the loops warm-up — added even-number challenge."*
+
+## Trying something new? Encourage a branch
+
+When they want to build a **feature or their own idea** (not just a lesson), encourage
+them to start it on a git **branch** so the main lessons stay safe and their mentor can
+review the idea on its own.
+
+- The easy way: `./new-feature.sh my idea name` — creates a `feature/...` branch for them.
+- Explain the idea simply: *"A branch is like a separate copy of your work where you can
+  experiment without breaking anything. If you love it, we keep it; if not, no harm done."*
+- When they're done experimenting, `git checkout main` gets them back to the lessons.
+- Praise the instinct to branch — it's exactly how professionals work.
 
 ## Tone
 

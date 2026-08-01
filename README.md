@@ -152,6 +152,15 @@ Take it one lesson at a time, ask Claude when you're stuck, and you'll get there
 
 ---
 
+## Saving your work & trying ideas
+
+- **When you finish for the day, run `./save.sh`.** It shows what you changed, asks you
+  to say **yes**, lets you leave a **question or concern for your mentor**, and sends it
+  all to GitHub. (Your work also saves automatically when you close Claude.)
+- **Want to build your own idea?** Run `./new-feature.sh my cool idea` first — it makes a
+  safe **branch** to experiment on without touching your lessons. Back to lessons anytime
+  with `git checkout main`.
+
 ## For the grown-up who set this up
 
 A few things are wired in to make this a smooth mentor-and-learner loop:
@@ -159,10 +168,12 @@ A few things are wired in to make this a smooth mentor-and-learner loop:
 - **`setup.sh`** — one script bootstraps the whole Mac toolchain (Homebrew, modern Python,
   git, and Colima + Docker for the containers track later). Idempotent and commented.
 - **`CLAUDE.md`** — standing instructions that make Claude tutor like a patient teacher:
-  hints over answers, and a steady nudge to **write comments** so you can read the
-  learner's thinking.
-- **Auto-update + save-back (optional hooks):** a `SessionStart` hook pulls your latest
-  lessons and notes from GitHub, and a `SessionEnd` hook commits and pushes the learner's
-  practice so **you can read their code and comments, then adjust and improve**. Setting
-  up hooks needs your explicit approval — see the note in your session, or add
-  `.claude/settings.json` yourself.
+  hints over answers, a steady nudge to **write comments**, and encouragement to **branch**
+  for new ideas.
+- **Auto-update + save-back (hooks, in `.claude/settings.json`):** a `SessionStart` hook
+  pulls your latest lessons/notes; a `SessionEnd` hook commits and pushes the learner's
+  practice so **you can read their code and comments, then adjust and improve**.
+- **`save.sh`** — the learner's approved save: they confirm before anything is sent, and
+  it captures their questions into **`notes-for-mentor.md`** so you hear what confused them.
+- Hooks are active for anyone using Claude in this folder. To review or disable them, run
+  `/hooks` inside Claude, or edit `.claude/settings.json`.

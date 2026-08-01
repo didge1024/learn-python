@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git pull --ff-only --quiet && echo '{\"systemMessage\":\"📡 Pulled the latest lessons and mentor notes from GitHub.\"}' || echo '{\"systemMessage\":\"ℹ️ Could not auto-update from GitHub just now — that is fine, keep learning.\"}'",
+            "timeout": 30,
+            "statusMessage": "Updating lessons from GitHub..."
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git add -A && ( git diff --cached --quiet || ( git commit -q -m \"Practice session $(date '+%Y-%m-%d %H:%M')\" && GIT_TERMINAL_PROMPT=0 git push -q ) ); true",
+            "timeout": 60,
+            "statusMessage": "Saving your work and comments to GitHub..."
+          }
+        ]
+      }
+    ]
+  }
+}
