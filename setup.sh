@@ -77,7 +77,7 @@ brew_install() {
   if brew list --formula "$pkg" >/dev/null 2>&1; then
     ok "$pkg already installed"
   else
-    info "Installing $pkg…"
+    info "Installing ${pkg}..."
     brew install "$pkg"
     ok "$pkg installed"
   fi
