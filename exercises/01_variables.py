@@ -4,9 +4,11 @@ Run me:  python3 exercises/01_variables.py
 """
 
 # A "variable" is a name that holds a value. Here are three:
-name = "Alex"          # text (called a "string")
-age = 12               # a whole number (an "int")
-height_m = 1.5         # a number with a decimal (a "float")
+name = "Michael"          # text (called a "string")
+age =43               # a whole number (an "int")
+height_m = 1.75        # a number with a decimal (a "float")
+
+print(str(age).upper())  # prints the value of the variable `age`.
 
 # f-strings let you drop variables straight into text with { }:
 print(f"Hi, I'm {name}. I'm {age} years old and {height_m} meters tall.")
@@ -17,8 +19,8 @@ print(f"Next year I'll be {next_year}.")
 
 # You can join strings together too:
 first = "Ada"
-last = "Lovelace"
-full_name = first + " " + last
+last = "LovElace"
+full_name = first.upper() + " " + last.lower()
 print(f"The first programmer was {full_name}.")
 
 
