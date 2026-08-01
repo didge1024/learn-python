@@ -130,14 +130,17 @@ is where the learning sticks — Claude is there to unblock you, not to do it fo
 ## Level up: code in a real editor (VS Code)
 
 Once you're comfortable, you can trade the terminal for a proper editor where you **see
-your code, run it, and chat with Claude all at once**. One command sets it up:
+your code, run it, and chat with Claude all at once**.
+
+`setup.sh` already installs **VS Code** with the **Python** and **Claude Code** extensions,
+so just open the project:
 
 ```bash
-./setup-editor.sh
+code .
 ```
 
-It installs **VS Code** plus the **Python** and **Claude Code** extensions, then opens the
-project. You'll get a layout like this:
+(Or run `./setup-editor.sh` anytime to open it and make sure the extensions are installed.)
+You'll get a layout like this:
 
 ```
 ┌───────────────────────┬──────────────────┐

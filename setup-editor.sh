@@ -21,6 +21,11 @@ info() { printf "  ${yellow}%s${reset} %s\n" "•" "$1"; }
 
 cd "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# --no-open: install and configure, but don't open the project or print the
+# full next-steps banner. Used when setup.sh calls this as one of its steps.
+OPEN_PROJECT=1
+[[ "${1:-}" == "--no-open" ]] && OPEN_PROJECT=0
+
 printf "\n${bold}🧑‍💻 Setting up your VS Code editor${reset}\n"
 
 if [[ "$(uname)" != "Darwin" ]]; then
@@ -78,7 +83,12 @@ install_ext() {
 install_ext "ms-python.python" "Python extension"
 install_ext "anthropic.claude-code" "Claude Code extension"
 
-# --- 4. Open the project ---------------------------------------------------
+# --- 4. Open the project (unless called with --no-open) --------------------
+if [[ "$OPEN_PROJECT" -eq 0 ]]; then
+  ok "VS Code and extensions are ready"
+  exit 0
+fi
+
 step "Opening your project in VS Code"
 "$CODE_BIN" . >/dev/null 2>&1 || true
 

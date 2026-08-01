@@ -119,6 +119,15 @@ else
   info "Skipped for now (no internet?) — ./test.sh will set it up later."
 fi
 
+# --- 4c. Code editor: VS Code + Python/Claude extensions -------------------
+# Reuse setup-editor.sh (install-only mode) so there's one source of truth.
+step "Installing your code editor (VS Code)"
+if [[ -f ./setup-editor.sh ]]; then
+  bash ./setup-editor.sh --no-open || info "Editor setup hit a snag — you can run ./setup-editor.sh later."
+else
+  info "setup-editor.sh not found — skipping the editor for now."
+fi
+
 # --- 5. Containers: Colima + Docker tools ----------------------------------
 # Colima runs a lightweight Linux VM so `docker` works without Docker Desktop.
 step "Installing container tools (Colima + Docker)"
@@ -154,8 +163,8 @@ cat <<'NEXT'
     4. Find where to start:        cd assessment && python3 grade.py
     5. Start your tutor:           claude
 
-  Want a real editor (see code + output + Claude side by side)?
-    Run:  ./setup-editor.sh
+  VS Code is installed too — open the project in it with:  code .
+  (see your code, its output, and Claude all side by side)
 
   Have fun — you've got this! 🚀
 NEXT
