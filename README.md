@@ -7,6 +7,9 @@ You don't need any experience. You *do* get a superpower most people learning to
 never had: **Claude**, an AI tutor that sits right in your terminal and helps you the
 whole way. Ask it anything. Get stuck? Ask. Confused by an error? Paste it in and ask.
 
+> 📋 **Prefer a friendly page with one-tap copy buttons for every command?**
+> Open the **[Start Here guide](https://claude.ai/code/artifact/32c3d0b3-b578-4128-8706-3e618910936c)** — same steps as below, easier to follow along.
+
 ## Get started on your Mac
 
 This is written for a **Mac**. Follow it top to bottom — each step is one copy-paste.
@@ -52,18 +55,7 @@ Claude account and approve access — then come back to the Terminal. You're con
 > plan — the free Claude account doesn't include it. Sign up at
 > [claude.ai](https://claude.ai) first if you don't have one.
 
-### Step 4 — Check you have Python
-
-Macs come with Python, but let's make sure. In the Terminal:
-
-```bash
-python3 --version
-```
-
-`Python 3.10` or higher? Perfect. If it's missing or older, just **ask Claude**: type
-`claude`, then *"How do I install the latest Python on my Mac?"* and follow along.
-
-### Step 5 — Get this project onto your Mac
+### Step 4 — Get this project onto your Mac
 
 In the Terminal:
 
@@ -73,8 +65,22 @@ git clone https://github.com/didge1024/learn-python.git
 cd learn-python
 ```
 
-(If `git` asks to install "command line developer tools," click **Install** and wait,
-then run the `git clone` line again.)
+(If a box pops up asking to install "command line developer tools," click **Install**,
+wait for it to finish, then run the `git clone` line again.)
+
+### Step 5 — Run the setup script (installs everything else)
+
+This one script installs the rest of your toolkit for you: **Homebrew**, a modern
+**Python**, **git**, and the **Docker / Colima** container tools you'll grow into later.
+It's safe to run more than once. From inside the `learn-python` folder:
+
+```bash
+./setup.sh
+```
+
+It may ask for your Mac password and your name/email for git — that's normal. When it
+finishes, **close the Terminal and open a fresh one**, then `cd ~/Desktop/learn-python`
+again so everything loads.
 
 ### Step 6 — Run your very first program 🎉
 
@@ -143,3 +149,20 @@ Every step has free courses and hands-on labs linked in the [curriculum](curricu
 Take it one lesson at a time, ask Claude when you're stuck, and you'll get there.
 
 **Now go run `python3 exercises/hello.py` and start. You've got this. 🚀**
+
+---
+
+## For the grown-up who set this up
+
+A few things are wired in to make this a smooth mentor-and-learner loop:
+
+- **`setup.sh`** — one script bootstraps the whole Mac toolchain (Homebrew, modern Python,
+  git, and Colima + Docker for the containers track later). Idempotent and commented.
+- **`CLAUDE.md`** — standing instructions that make Claude tutor like a patient teacher:
+  hints over answers, and a steady nudge to **write comments** so you can read the
+  learner's thinking.
+- **Auto-update + save-back (optional hooks):** a `SessionStart` hook pulls your latest
+  lessons and notes from GitHub, and a `SessionEnd` hook commits and pushes the learner's
+  practice so **you can read their code and comments, then adjust and improve**. Setting
+  up hooks needs your explicit approval — see the note in your session, or add
+  `.claude/settings.json` yourself.
