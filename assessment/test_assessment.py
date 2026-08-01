@@ -1,4 +1,5 @@
-"""Pytest view of the assessment — per-function pass/fail. Run: python3 -m pytest
+"""Pytest view of the assessment — per-function pass/fail.
+Run from the repo's main folder: ./test.sh assessment
 
 These will fail until you implement the functions in assessment.py. That's expected:
 turning them green IS the assessment."""

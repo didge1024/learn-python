@@ -1,4 +1,5 @@
-"""Smoke tests for PS4. Run: python3 -m pytest"""
+"""Smoke tests for PS4.
+Run from the repo's main folder: ./test.sh curriculum/mit-6.0001/ps4-caesar-cipher"""
 from caesar import build_shift_dict, apply_shift
 
 

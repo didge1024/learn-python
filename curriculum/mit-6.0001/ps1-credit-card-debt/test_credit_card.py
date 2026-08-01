@@ -1,5 +1,5 @@
 """Smoke tests for PS1. These check shape/behavior, not the official grader values.
-Run: python3 -m pytest"""
+Run from the repo's main folder: ./test.sh curriculum/mit-6.0001/ps1-credit-card-debt"""
 import pytest
 from credit_card import (
     balance_after_year,

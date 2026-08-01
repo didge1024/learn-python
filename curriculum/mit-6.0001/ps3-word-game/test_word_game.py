@@ -1,4 +1,5 @@
-"""Smoke tests for PS3. Run: python3 -m pytest"""
+"""Smoke tests for PS3.
+Run from the repo's main folder: ./test.sh curriculum/mit-6.0001/ps3-word-game"""
 from word_game import get_word_score, update_hand, is_valid_word
 
 

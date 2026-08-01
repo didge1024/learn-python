@@ -106,6 +106,19 @@ else
 fi
 git config --global init.defaultBranch main >/dev/null 2>&1 || true
 
+# --- 4b. Test tool (pytest in a private virtual environment) ----------------
+# Keeps your Mac's Python clean; ./test.sh reuses this. Non-fatal if offline.
+step "Setting up the test tool"
+if [[ -x .venv/bin/python ]]; then
+  ok "Test environment already set up"
+elif python3 -m venv .venv 2>/dev/null && \
+     .venv/bin/python -m pip install --quiet --upgrade pip 2>/dev/null && \
+     .venv/bin/python -m pip install --quiet pytest 2>/dev/null; then
+  ok "pytest ready — run tests anytime with ./test.sh"
+else
+  info "Skipped for now (no internet?) — ./test.sh will set it up later."
+fi
+
 # --- 5. Containers: Colima + Docker tools ----------------------------------
 # Colima runs a lightweight Linux VM so `docker` works without Docker Desktop.
 step "Installing container tools (Colima + Docker)"

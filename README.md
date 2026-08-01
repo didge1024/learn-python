@@ -130,7 +130,7 @@ is where the learning sticks — Claude is there to unblock you, not to do it fo
 ## What's in here
 
 - **`assessment/`** — [a quick diagnostic](assessment/README.md) that tells you where to start. **Run this first.**
-- **`curriculum/`** — [the best free courses on the internet](curriculum/README.md) (MIT, Harvard, Berkeley) with the great assignments picked out. The MIT problem sets have [ready-to-code starter files](curriculum/mit-6.0001/) — you fill in the blanks and run the tests.
+- **`curriculum/`** — [the best free courses on the internet](curriculum/README.md) (MIT, Harvard, Berkeley) with the great assignments picked out. The MIT problem sets have [ready-to-code starter files](curriculum/mit-6.0001/) — you fill in the blanks and check them with `./test.sh` (tests are red until you finish; turning them green is the point).
 - **`exercises/`** — tiny practice programs to warm up on.
 - **`projects/`** — bigger builds that grow into real, deployable apps.
 

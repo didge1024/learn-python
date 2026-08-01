@@ -1,4 +1,5 @@
-"""Smoke tests for the PS2 helper functions. Run: python3 -m pytest"""
+"""Smoke tests for the PS2 helper functions.
+Run from the repo's main folder: ./test.sh curriculum/mit-6.0001/ps2-hangman"""
 import string
 from hangman import is_word_guessed, get_guessed_word, get_available_letters
 

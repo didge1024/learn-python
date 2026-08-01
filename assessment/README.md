@@ -22,8 +22,13 @@ It covers five levels of increasing depth:
 ```bash
 cd assessment
 python3 grade.py          # runs the grader, prints your score + placement
-# or, for detailed pass/fail per function:
-python3 -m pytest
+```
+
+Or, for a detailed pass/fail per function, run this from the repo's main folder
+(it sets up the test tool automatically the first time):
+
+```bash
+./test.sh assessment
 ```
 
 Rules of engagement:

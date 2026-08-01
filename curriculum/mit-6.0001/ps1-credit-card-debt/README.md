@@ -21,5 +21,5 @@ Loops, floating-point arithmetic, brute-force vs. binary search, converging on a
 
 1. Read the official PDF (link above) for exact numbers and expected output.
 2. Fill in the functions in `credit_card.py`.
-3. Run the tests: `python3 -m pytest` (from this folder).
+3. Run the tests from the repo's main folder: `./test.sh curriculum/mit-6.0001/ps1-credit-card-debt`
 4. When green, ask Claude to review your bisection loop for edge cases.
