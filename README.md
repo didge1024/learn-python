@@ -50,6 +50,7 @@ The repo is organized so understanding compounds — each stage builds on the la
 
 ## Structure
 
+- `curriculum/` — [curated free courseware & the best CS assignments](curriculum/README.md) (MIT, Harvard CS50, Berkeley CS61A)
 - `exercises/` — bite-sized practice problems
 - `projects/` — small end-to-end programs that grow into deployable services
 
