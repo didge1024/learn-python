@@ -1,0 +1,21 @@
+{
+  "//": "Beginner-friendly defaults for the learn-python workspace.",
+
+  "// python": "Use the project's own .venv (created by setup.sh / test.sh).",
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+
+  "// claude": "Dock Claude in the right sidebar so it sits next to your code.",
+  "claudeCode.preferredLocation": "sidebar",
+  "claudeCode.usePythonEnvironment": true,
+
+  "// editor": "Gentle defaults — save automatically, wrap long lines, no surprise reformatting.",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": false,
+  "editor.minimap.enabled": false,
+
+  "// welcome": "Show this project's README when the folder opens.",
+  "workbench.startupEditor": "readme"
+}

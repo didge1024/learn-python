@@ -154,5 +154,8 @@ cat <<'NEXT'
     4. Find where to start:        cd assessment && python3 grade.py
     5. Start your tutor:           claude
 
+  Want a real editor (see code + output + Claude side by side)?
+    Run:  ./setup-editor.sh
+
   Have fun — you've got this! 🚀
 NEXT

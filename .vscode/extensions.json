@@ -1,0 +1,7 @@
+{
+  "//": "When Noah opens this folder, VS Code offers to install these for him.",
+  "recommendations": [
+    "ms-python.python",
+    "anthropic.claude-code"
+  ]
+}

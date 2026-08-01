@@ -127,6 +127,33 @@ Claude is a patient teacher that never gets tired of your questions. Try prompts
 **One rule:** try things yourself *first*, then ask Claude to help or check. The struggle
 is where the learning sticks — Claude is there to unblock you, not to do it for you.
 
+## Level up: code in a real editor (VS Code)
+
+Once you're comfortable, you can trade the terminal for a proper editor where you **see
+your code, run it, and chat with Claude all at once**. One command sets it up:
+
+```bash
+./setup-editor.sh
+```
+
+It installs **VS Code** plus the **Python** and **Claude Code** extensions, then opens the
+project. You'll get a layout like this:
+
+```
+┌───────────────────────┬──────────────────┐
+│  your code            │   ✱ Claude        │
+│  exercises/hello.py   │   your AI tutor,  │
+│  print("hi")          │   right here      │
+├───────────────────────┤                  │
+│  ▶ Terminal:  hi      │                  │
+└───────────────────────┴──────────────────┘
+```
+
+- Open a file from the left sidebar, then press the **▶ Run** button (top-right) — the
+  output shows up in the terminal right below your code.
+- Click the **✱ Claude** icon and **sign in** to chat with your tutor while you code.
+- Open a terminal anytime with **Cmd + `** (the key above Tab) to run `./test.sh`, `claude`, etc.
+
 ## What's in here
 
 - **`assessment/`** — [a quick diagnostic](assessment/README.md) that tells you where to start. **Run this first.**
@@ -167,6 +194,8 @@ A few things are wired in to make this a smooth mentor-and-learner loop:
 
 - **`setup.sh`** — one script bootstraps the whole Mac toolchain (Homebrew, modern Python,
   git, and Colima + Docker for the containers track later). Idempotent and commented.
+- **`setup-editor.sh` + `.vscode/`** — optional VS Code setup with the Python and Claude
+  extensions, pre-configured to dock Claude beside the code and use the project's `.venv`.
 - **`CLAUDE.md`** — standing instructions that make Claude tutor like a patient teacher:
   hints over answers, a steady nudge to **write comments**, and encouragement to **branch**
   for new ideas.
